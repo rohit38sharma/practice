@@ -1,0 +1,168 @@
+Karat Round:
+- Roughly 5 or 6 different scenario based questions were asked revolving around system design concepts
+  - For the following scenarios, which would be better - Strong consistency/Eventual consistency. Explain reasons why. About 3 scenarios were given, one of which was a Banking application.
+
+  - The interview gave a scenario for Google docs and multiple users can access the same document, and google docs uses a Round Robin load balancing approach. Do you see any issues with using such an approach.
+
+  - One question was related to finding the max throughput of a system. It was sort of like a graph diagram, with various about 6 stages labeled A to F, and the throughput they operate on. I was asked to calculate the max throuhput of the system.
+
+  - One question was related to a scenario where they were using a relational database, and two tables were provided with a foreign key reference. They wanted to see how we can scale such a system (I believe they were looking for data partitioning/sharding techniques that we could apply.)
+
+  - Another scenario was something like that there was a bug on an application, and you ended up having a lot of failed requests. You have a database that stores all IDs that are there, and you also have large log files from about 500 different production servers that log the IDs of the successful requests. How would you come up with a solution to find the IDs that were missing/
+
+
+DS Algo:
+- https://github.com/krishnadey30/LeetCode-Questions-CompanyWise/blob/master/atlassian_alltime.csv
+- https://leetcode.com/problems/rank-teams-by-votes/description/
+- You will be given a list of file names, the collection the file belongs to and the size of each file. Write a program to find the top N collections by size and the total size of all the files in the system. Follow up - collections can be nested, find top N collections by size.
+- https://leetcode.com/problems/design-file-system/description/
+- https://leetcode.com/problems/all-oone-data-structure/description/
+- https://leetcode.com/problems/basic-calculator-ii/description/
+- https://leetcode.com/problems/basic-calculator/
+- We are working on a security system for a badged-access room in our company's building.
+
+  We want to find employees who badged into our secured room unusually often. We have an unordered list of names and entry times over a single day. Access times are given as numbers up to four digits in length using 24-hour time, such as "800" or "2250".
+
+  Write a function that finds anyone who badged into the room three or more times in a one-hour period. Your function should return each of the employees who fit that criteria, plus the times that they badged in during the one-hour period. If there are multiple one-hour periods where this was true for an employee, just return the earliest one for that employee.
+
+    badge_times = [
+    ["Paul", "1355"], ["Jennifer", "1910"], ["Jose", "835"],
+    ["Jose", "830"], ["Paul", "1315"], ["Chloe", "0"],
+    ["Chloe", "1910"], ["Jose", "1615"], ["Jose", "1640"],
+    ["Paul", "1405"], ["Jose", "855"], ["Jose", "930"],
+    ["Jose", "915"], ["Jose", "730"], ["Jose", "940"],
+    ["Jennifer", "1335"], ["Jennifer", "730"], ["Jose", "1630"],
+    ["Jennifer", "5"], ["Chloe", "1909"], ["Zhang", "1"],
+    ["Zhang", "10"], ["Zhang", "109"], ["Zhang", "110"],
+    ["Amos", "1"], ["Amos", "2"], ["Amos", "400"],
+    ["Amos", "500"], ["Amos", "503"], ["Amos", "504"],
+    ["Amos", "601"], ["Amos", "602"], ["Paul", "1416"],
+    ];
+
+    Expected output (in any order)
+    Paul: 1315 1355 1405. // 1315-1415
+    Jose: 830 835 855 915 930
+    Zhang: 10 109 110
+    Amos: 500 503 504
+
+    n: length of the badge records array
+- You are given a list of files, each represented by [FileName, FileSize, [Collection]]. The "Collection" field is optional, indicating that a file can belong to one or more collections. However, a collection can have one or more files associated with it.
+
+  Your task is to implement a system that can process and analyze this file list to perform the following operations:
+
+  Calculate the total size of files processed.
+  Identify and calculate the top K collections based on their total size. Example: Suppose you have the following file list:
+  file1.txt (size: 100)
+  file2.txt (size: 200) in collection "collection1"
+  file3.txt (size: 200) in collection "collection1"
+  file4.txt (size: 300) in collection "collection2"
+  file5.txt (size: 100)
+  Output:
+
+  Total size of files processed: 900
+  Top 2 collections:
+  - collection1 : 400
+  - collection2 : 300
+
+- You have been given an array/list 'WORDS' of 'N' non-empty words, and an integer 'K'. Your task is to return the 'K' most frequent words sorted by their frequency from highest to lowest.
+  Note: If two words have the same frequency then the lexicographically smallest word should come first in your answer.
+  Follow up : Can you solve it in O(N * logK) time and O(N) extra space?
+  Brute force was to iterate on every collection id/name over every file given and then group them up. That was not an optimized solution.
+  Optimal way is to use Set to remove duplicates first and then use min heap with custom comparators to sort files by sizes, custom class object to group the files by collections.
+
+- https://www.geeksforgeeks.org/problems/winner-of-an-election-where-votes-are-represented-as-candidate-names-1587115621/1
+
+LLD: (Here you are expected to write clean code in any ide of your choice and you are expected to run it for a few test cases)
+- Implement a rate limiter. Modify it to be per user. Add a credit system for each user in case rate was not used
+  Imagine we are building an application that is used by many different customers.
+  We want to avoid one customer being able to overload the system by sending too many requests,
+  so we enforce a per-customer rate limit. The rate limit is defined as:
+
+    “Each customer can make X requests per Y seconds”
+
+    Assuming that customer ID is extracted somehow from the request, implement the following function.
+
+
+    // Perform rate limiting logic for provided customer ID. Return true if the
+    // request is allowed, and false if it is not.
+    boolean rateLimit(int customerId)
+
+    one of our customers have bursty traffic, and are complaining about being rate limited.
+    We want to better accomodate those customers, so we want to adopt a ‘credit’ based system. It will work as follows:
+
+    For each bucket of time, any capacity available below the limit is converted into credits for that customer
+
+    There is some maximum number of credits that a customer can accumulate
+
+    When a customer exceeds their normal request limit for a window, the credit count starts to decrease.
+    When there are 0 credits, the customer is rate limited.
+
+- https://leetcode.com/problems/design-snake-game/
+- https://www.naukri.com/code360/library/design-snake-and-ladder-low-level-design?utm_source=cn_ie&utm_medium=learn
+
+
+HLD:
+- Design a web crawler
+
+- Design a Scheduled Query Executor
+    You are tasked with designing a high-level system for a Scheduled Query Executor that allows users to schedule and execute queries on a database at specific intervals. The system should support various types of queries, provide scheduling options, and log query execution results.
+
+    Requirements:
+
+    Query Execution: The system should allow users to submit SQL queries to be executed on a database. Users should be able to submit queries of different types, including SELECT, INSERT, UPDATE, DELETE, and more.
+    Query Scheduling: Users should be able to schedule queries to be executed at specific intervals, such as once per day, once per week, or a custom interval.
+    Query Logging: The system should log the execution results of each query, including success or failure status, execution time, and any returned data or affected rows.
+    Error Handling: The system should handle errors and exceptions that may occur during query execution and provide appropriate error messages or notifications to users.
+    Database Connection: The system should establish and maintain a connection to the target database to execute queries.
+    Security: The system should implement appropriate security measures to ensure that users can only execute authorized queries and access relevant data.
+    Scalability: The system should be scalable to handle a large number of queries and users concurrently.
+
+- Design a Tagging system for JIRA and this system can be used with other products as well. System should be highly Available and Fault Taulrance.
+  Atlassian has a number of different products, each containing different types of content. As an example, let’s look at four of our products:
+  Jira - Issues
+  Confluence - Web Pages
+  BitBucket - Pull Request
+  Trello - Board
+
+  How would you add tags for related pages across all Atlassian products.
+  How would you scale up the system to 100 Million tag requests a day.
+
+- Design a site that allows users to pick a few colors and save it as a list.
+  The following features were expected to be built - save a color, delete a color, share colors list with a bunch of users through email,
+  access control to allow other users to view your favorite color list.
+  More focus was given on building the actual functionality and the scale of the system.
+
+  design a system that allowed users to select their favorite colors and share them with friends.
+  Had to decide which type of database to use, the schema, some queries.
+  Was also asked to design the API's as well as describe how it would be called.
+  The discussion continued and we eventually talked about scaling it up, and how to make sure the system was performing as it was supposed to.
+
+-   Design Confluence with proper diagrams and all.
+    Suggest a metric on which page should be ranked (Like most visit, likes)
+    Design Database for same.
+
+- Design a service to support tagging of items in the whole system. The whole system can have multiple types of products like Jira tickets, Wiki pages, etc. This tagging service will help us to add tags to any of the other products.
+
+  Requirements:
+
+  Add tags to an item
+  View the items with a specific tag.
+  Get tags associated with an item.
+  List the most popular tags in the system.
+  Show suggestions of tags to the users as they type to add a tag to an item.
+  Non-functional requirements:
+
+  System should work in near real-time
+  It should be scalable to more types of future products.
+  System should be scalable to more number of users.
+
+Behavioural:
+- Describe a time when you had to handle a challenging team dynamic or resolve conflicts among team members. How did you address the situation, and what was the outcome?
+
+
+Value Questions:
+- 1. Basic HR questions
+  Atlassian has 5 values. Situational questions will be asked around those 5 values if you've demonstrated them in your past or not.
+
+  Problem approach
+  Tip 1 : Go to atlassian homepage and read the 5 values carefully and think of situations from your career where you showed that value!

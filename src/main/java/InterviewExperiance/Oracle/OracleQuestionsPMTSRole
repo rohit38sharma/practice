@@ -1,0 +1,23 @@
+Screening:
+    1. Number of island in a given matrix.
+    2. Knowledge check on System design of a payment gateway system.
+
+Loop Interview:
+    Round 1:
+        1. Given N number of files with size and tags. Return Top K tags having most size.
+        2. Design a system responsible for deployments which can handle safe deployment and consider configs like blast radius etc. like Kubernates
+
+    Round 2(Bar tender round):
+        1. Behavioural questions. Current Project walkthru.
+
+    Round 3:
+        1. Few Behavioural questions.
+        2. Design LFU cache.
+
+    Round 4 (HM round):
+        1. Few Behavioural questions.
+        2. Given a dictionary and matrix full with characters. Return all the valid words.
+        3. HLD - Design cross words game.
+
+    Round 5:
+        1. Given integer array and K. Return all the combinations with sum equals to K.

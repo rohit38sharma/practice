@@ -1,0 +1,54 @@
+/*
+
+Define component/entities for a Vending machine with following requirements:
+
+1) Vending machine can have different items with different prices.
+2) Vending machine accepts 10, 20 and 50 rupees notes only
+3) Allows users to select any product and insert the notes
+4) Return the selected items and change (if any)
+
+
+Classes:
+
+Item{
+    String name;
+    int price;
+}
+
+Enum currency{
+    10,
+    20,
+    50
+}
+
+Enum state{
+    idle,
+    OOO,
+    takingMoney,
+    dispancing
+}
+
+VendingMachin{
+    InventoryService;
+    CurrencyService;
+    State currentState;
+
+    private static VendingMachin vendingmachin;
+
+    //
+}
+
+CurrencyService{
+    Map<Currency, Integer> balance;
+}
+
+InventoryService{
+     Map<Item, Integer> inventory;
+}
+
+
+
+
+
+
+*/
