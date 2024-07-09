@@ -1,0 +1,28 @@
+System Design:
+
+1. design trending topics/Article on linkedin
+    (There is an API that is writing the Shared Article URN to DB continuously. Use this API to get the trending article on LinkedIn.)
+2. API Rate limiter
+3. Design Heavy hitters/top K exceptions from the logs
+4. Design facebook/instagram
+5. Design chat application
+6. Booking System at scale
+7. Design a calender invite service
+8. Design the metric plotting system: You have an application, which sends data to another metric generation system and plots the graph,
+    based on various factors. design this system.
+9. Metrics Aggregation System.
+10. Design coderpad with features like live collab, replay etc
+11. We have a big deployment with hundreds of machines each of which is exposing thousands of statistics.
+    You can think that each statistic is represented by the tuple [source, metric-name, value].
+    We want to be able to collect and aggregate those tuples in a scalable manner.
+    The main consumers for this system are:
+    The engineer who wants to see how the application’s latency is from last 1 month
+    As an alert service we setup alerts
+    Source metric ( t1 to t2) we want to see the metrics how to query the values
+
+LLD:
+1. car rental
+2. restaurant booking
+3. IAM Management System
+4. Ticket Resolution System for FinTech,
+    where ticket are assigned to Staff on the basis of his expertise on given issue like UPI, Gold, SIP etc.

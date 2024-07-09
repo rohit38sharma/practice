@@ -104,6 +104,19 @@ LLD: (Here you are expected to write clean code in any ide of your choice and yo
 HLD:
 - Design a web crawler
 
+- Design a Scheduled Query Executor
+    You are tasked with designing a high-level system for a Scheduled Query Executor that allows users to schedule and execute queries on a database at specific intervals. The system should support various types of queries, provide scheduling options, and log query execution results.
+
+    Requirements:
+
+    Query Execution: The system should allow users to submit SQL queries to be executed on a database. Users should be able to submit queries of different types, including SELECT, INSERT, UPDATE, DELETE, and more.
+    Query Scheduling: Users should be able to schedule queries to be executed at specific intervals, such as once per day, once per week, or a custom interval.
+    Query Logging: The system should log the execution results of each query, including success or failure status, execution time, and any returned data or affected rows.
+    Error Handling: The system should handle errors and exceptions that may occur during query execution and provide appropriate error messages or notifications to users.
+    Database Connection: The system should establish and maintain a connection to the target database to execute queries.
+    Security: The system should implement appropriate security measures to ensure that users can only execute authorized queries and access relevant data.
+    Scalability: The system should be scalable to handle a large number of queries and users concurrently.
+
 - Design a Tagging system for JIRA and this system can be used with other products as well. System should be highly Available and Fault Taulrance.
   Atlassian has a number of different products, each containing different types of content. As an example, let’s look at four of our products:
   Jira - Issues
@@ -123,19 +136,6 @@ HLD:
   Had to decide which type of database to use, the schema, some queries.
   Was also asked to design the API's as well as describe how it would be called.
   The discussion continued and we eventually talked about scaling it up, and how to make sure the system was performing as it was supposed to.
-
-- Design a Scheduled Query Executor
-    You are tasked with designing a high-level system for a Scheduled Query Executor that allows users to schedule and execute queries on a database at specific intervals. The system should support various types of queries, provide scheduling options, and log query execution results.
-
-    Requirements:
-
-    Query Execution: The system should allow users to submit SQL queries to be executed on a database. Users should be able to submit queries of different types, including SELECT, INSERT, UPDATE, DELETE, and more.
-    Query Scheduling: Users should be able to schedule queries to be executed at specific intervals, such as once per day, once per week, or a custom interval.
-    Query Logging: The system should log the execution results of each query, including success or failure status, execution time, and any returned data or affected rows.
-    Error Handling: The system should handle errors and exceptions that may occur during query execution and provide appropriate error messages or notifications to users.
-    Database Connection: The system should establish and maintain a connection to the target database to execute queries.
-    Security: The system should implement appropriate security measures to ensure that users can only execute authorized queries and access relevant data.
-    Scalability: The system should be scalable to handle a large number of queries and users concurrently.
 
 -   Design Confluence with proper diagrams and all.
     Suggest a metric on which page should be ranked (Like most visit, likes)
